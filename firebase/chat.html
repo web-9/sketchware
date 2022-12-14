@@ -1,0 +1,76 @@
+
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <title>Lyh</title>
+    <link rel="icon" href="src/pix/logo.svg" type="svg+xml">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../src/globals.css">
+    <script src="../src/globals.js" defer></script>
+    <style>
+    </style>
+</head>
+
+<appbar>
+    <h1>Sketchware Tuts</h1>
+</appbar>
+<body>
+    <main>
+        <h2>Codes to improve firebase chatting app in sketchware</h2>
+        <article>
+            <li tut="1">
+                <txt>Remove divider​ height of ListView <br>
+                    To remove the divider height of ListView displaying messages, put following code in onCreate, in an add source directly block</txt>
+                <code>listview1.setDivider(null);</code>
+                <code>listview1.setDividerHeight(0);</code>
+            </li>
+            <li tut="2">
+                <txt>Display end of ListView on refresh <br>
+To make the ListView scroll to display the last element of list when updated, put following code in onCreate, in an add source directly block.</txt>
+                <code>listview1.setTranscriptMode(ListView.TRANSCRIPT_MODE_ALWAYS_SCROLL);</code>
+                <code>listview1.setStackFromBottom(true);</code>
+            </li>
+            <li tut="3">
+                <txt>Set width of ListView items to 3/4 of screen width <br>
+                    Firstly, in CustomView, insert a LinearH linear1, and inside that insert a LinearV linear2. Put all contents to be displayed in linear2.</txt>
+                <img tut src="assets/chat/3-1.jpeg" alt="">
+                <p>Now, in event onBindCustomView, add a number variable width. Set width to getDisplayWidthPixels * 0.75, and set it as width of linear2 using following code.</p>
+                <code>LinearLayout.LayoutParams lp = new LinearLayout.LayoutParams((int)width,</code>
+                <code>LinearLayout.LayoutParams.WRAP_CONTENT);</code>
+                <code>linear2.setLayoutParams(lp);</code>
+                <img tut src="assets/chat/3-2.jpg" alt="">
+                <img tut src="assets/chat/3-3.jpg" alt="">
+            </li>
+            <li tut="4">
+                <txt>Rounded corners and Custom background color <br>
+                    In onBindCustomView event, add a add source directly block and put code to create a GradientDrawable with custom background color and rounded corners, as given below, and set it as background of linear2.</txt>
+                <code>android.graphics.drawable.GradientDrawable gd = new android.graphics.drawable.GradientDrawable();</code>
+                <code>gd.setColor( Color.parseColor( "#ffffff" ) );</code>
+                <code>gd.setCornerRadius( 60 );</code>
+                <code>linear2.setBackground( gd );</code>
+            </li>
+            <li tut="5">
+                <txt>Display messages of device user on right and those of others on left</txt>
+                <img tut src="assets/chat/5-1.jpeg" alt="">
+                <p>To display messages of user on right and those of others on left, in onBindCustomView event, use blocks as shown in image above. The code used is:</p>
+                <p>If File user getData key username equals (get value at position key name of List Map map1) then,</p>
+                <code>linear1.setGravity(Gravity.RIGHT);</code>
+                <p>else,</p>
+                <code>linear1.setGravity(Gravity.LEFT);</code>
+                <img tut src="assets/chat/5-2.jpeg" alt="">
+            </li>
+            <li tut="6">
+                <txt>Hide Keyboard on button click <br>
+                    Add following code in on button click event.</txt>
+                    <code>android.view.inputmethod.InputMethodManager imm = (android.view.inputmethod.InputMethodManager)getSystemService(INPUT_METHOD_SERVICE);</code>
+                    <code>imm.hideSoftInputFromWindow(getCurrentFocus().getWindowToken(), 0);</code>
+            </li>
+        </article>
+        <li link="https://www.youtube.com/watch?v=U-Cs53ikyVk">YouTube Guide</li>
+    </main>
+</body>
+
+</html>

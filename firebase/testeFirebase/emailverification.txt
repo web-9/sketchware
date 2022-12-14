@@ -1,0 +1,12 @@
+
+
+firebaseAuth.getCurrentUser().sendEmailVerification().addOnCompleteListener( new OnCompleteListener<Void>() {
+    @Override
+    public void onComplete( Task<Void> task ) {
+        if( task.isSuccessful() ) {
+            showMessage( "Email enviado!" );
+        } else {
+            showMessage( "Erro ao enviar o email!" );
+        }
+    }
+} );

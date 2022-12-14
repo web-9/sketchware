@@ -1,0 +1,29 @@
+
+
+/* [ button onClick ]
+======================================================== */
+if( editText1 == "" || editText2 == "" ) {
+    createSnackBar( "São necessários email e senha." );
+} else {
+    firebaseAuth.signInWith.email( editText1.getText() ).password( editText2.getText() );
+}
+
+/* [ firebaseAuth onSignInUserComplete ]
+======================================================== */
+
+/* [ filePicker component ]
+======================================================== */
+/* when image1 clicked
+choose a photo from */
+filePicker.pickFiles();
+
+/* onFilesPicked */
+// create a list String
+// create a String var
+set(String).to( getAt( 0 ).of( ListString: filePath ) );
+
+/* [ btn onClick ]
+==================================== */
+if( editText1 == || editText2 == || editText3 == ||  ) {
+    createSnackBar( "Todos os campos são necessários." );
+}

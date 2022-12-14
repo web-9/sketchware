@@ -1,0 +1,151 @@
+
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <title>Lyh</title>
+    <link rel="icon" href="src/pix/logo.svg" type="svg+xml">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../src/globals.css">
+    <script src="../src/globals.js" defer></script>
+    <style>
+    </style>
+</head>
+
+<appbar>
+    <h1>Sketchware Tuts</h1>
+</appbar>
+<body>
+    <main>
+        <h2>Firebase auth in Sketchware for Login Activity</h2>
+        <article>
+            <li id="tut1">
+                <txt>In your Firebase account, go to Firebase authentication.</txt>
+                <img tut tut src="assets/login/1.png" alt="">
+            </li>
+            <li id="tut2">
+                <txt>In Firebase authentication web set-up, go to SIGN-IN method, and enable Email/password and Anonymous.</txt>
+                <img tut src="assets/login/2.png" alt="">
+            </li>
+            <li id="tut3">
+                <txt>Go to Project settings in your Firebase project and copy the Web API Key, Project ID, and App ID.</txt>
+                <img tut src="assets/login/3.jpg" alt="">
+            </li>
+            <li id="tut4">
+                <txt>Paste the Project ID, App ID, and Web API Key in your project in Sketchware, in the Firebase settings.</txt>
+                <img tut src="assets/login/4.jpg" alt="">
+            </li>
+            <li id="tut5">
+                <txt>On the MainActivity page add a File Shared preferences component user:user and an Intent i. Also add a Timer t and a Firebase Auth testlogin</txt>
+                <img tut src="assets/login/5-1.jpg" alt="">
+                <img tut src="assets/login/5-2.jpeg" alt="">
+            </li>
+            <li id="tut6">
+                <txt>Create a new page login.xml with Activity called LoginActivity</txt>
+            </li>
+            <li id="tut7">
+                <txt>In onCreate event of MainActivity use blocks as shown in image below</txt>
+                <img tut src="assets/login/7.jpeg" alt="">
+                <txt>It identifies main page with File user key page. It also checks if user is logged in to FirebaseAuth</txt>
+                <txt>If user is logged in then other blocks are executed</txt>
+                <txt>If user is not logged in, he is taken to LoginActivity using Intent i.</txt>
+            </li>
+            <li id="tut8">
+                <txt>On LoginActivity VIEW area,</txt>
+                <ul>
+                    <li>
+                        <txt>add two Linear(H) loading_linear and linear3</txt>
+                    </li>
+                    <li>
+                        <txt>In linear3 add two Buttons button2 and button3 for Sign in and Sign up respectively</txt>
+                    </li>
+                    <li>
+                        <txt>Below linear3 add two Linear(V) login_linear and register_linear</txt>
+                    </li>
+                    <li>
+                        <txt>In login_linear add edittext3 and edittext4 for email and password respectively, and add a Button login_button for Sign in</txt>
+                    </li>
+                    <li>
+                        <txt>In register_linear add edittext7, edittext6 and edittext5 for nickname, email and password respectively. Also add register_button for Sign up</txt>
+                    </li>
+                </ul>
+                <img tut src="assets/login/8.jpeg" alt="">
+            </li>
+            <li id="tut9">
+                <txt>In LOGIC area of LoginActivity, add a new File Shared preferences component user:user (same as in MainActivity),
+                    a FirebaseDB component user_id:userid, and a Firebase Auth component testlogin (same as in MainActivity).
+                    </txt>
+                <img tut src="assets/login/9-1.jpeg" alt="">
+                <img tut src="assets/login/9-2.jpeg" alt="">
+            </li>
+            <li id="tut10">
+                <txt>Add a List Map map1 and a String list uid.</txt>
+                <img tut src="assets/login/10.jpg" alt="">
+            </li>
+            <li id="tut11">
+                <txt>Also add a Map variable map_var, and a number variable n.</txt>
+                <img tut src="assets/login/11.jpg" alt="">
+            </li>
+            <li id="tut12">
+                <txt>In onCreate event of LoginActivity add blocks as shown in image below</txt>
+                <img tut src="assets/login/12.jpg" alt="">
+                <txt>These blocks identify page by setting value login to file key page. They also make loading_linear VISIBLE and other linears GONE.</txt>
+            </li>
+            <li id="tut13">
+                <txt>On button2 click add blocks shown in image below. These blocks make login_linear visible, and button2 red</txt>
+                <img tut src="assets/login/13.jpg" alt="">
+            </li>
+            <li id="tut14">
+                <txt>On button3 click add blocks shown in image below. These blocks make register_linear visible, and button3 red</txt>
+                <img tut src="assets/login/14.jpg" alt="">
+            </li>
+            <li id="tut15">
+                <txt>On register_button Click, add blocks as shown in image below.</txt>
+                <img tut src="assets/login/15.jpeg" alt="">
+                <txt>These blocks check if the EditText fields are empty. If they are empty it toasts a message. If not empty, it registers the email and password of user to Firebase Auth and makes loading_linear visible.</txt>
+            </li>
+            <li id="tut16">
+                <txt>Add event Firebase Auth: onCreateUserComplete and use blocks as shown in image below.</txt>
+                <img tut src="assets/login/16.jpg" alt="">
+                <txt>If the user is registered successfully, these blocks push his FirebaseAuth Uid, and his nickname to Firebase DB user_id. If registration fails, these blocks make register_linear VISIBLE.</txt>
+            </li>
+            <li id="tut17">
+                <txt>Add a new event FirebaseDB on child added. In this event use blocks as in image below.</txt>
+                <img tut src="assets/login/17-1.jpg" alt="">
+                <img tut src="assets/login/17-2.jpg" alt="">
+                <txt>These blocks get data from Firebase DB to List Map map1, and then create a String list uid from all the uid in List Map map1, and make login_linear VISIBLE</txt>
+            </li>
+            <li id="tut18">
+                <txt>On  login_button click use blocks as shown in image below</txt>
+                <img tut src="assets/login/18.jpg" alt="">
+                <txt>These blocks Sign in user using Firebase Auth and make loading_linear visible</txt>
+            </li>
+            <li id="tut19">
+                <txt>Add event Firebase Auth: onSignInUserComplete and use blocks as shown in image below</txt>
+                <img tut src="assets/login/19-1.jpg" alt="">
+                <img tut src="assets/login/19-2.png" alt="">
+                <txt>If user is signed in using Firebase Auth, these blocks save his nickname, and move him to MainActivity by Finishing LoginActivity</txt>
+            </li>
+            <li id="tut20">
+                <txt>Add onBackPressed event and use following codes in it</txt>
+                <img tut src="assets/login/20.jpg" alt="">
+            </li>
+            <li id="tut21">
+                <txt>Again in MainActivity, add onStart event, and use following blocks</txt>
+                <img tut src="assets/login/21.jpg" alt="">
+            </li>
+            <li id="tut22">
+                <txt>In VIEW area of MainActivity add a button (button2) for Sign out, and on the event of button2 click, use following blocks</txt>
+                <img tut src="assets/login/22.jpg" alt="">
+            </li>
+            <li id="tut23">
+                <txt>Save and run the project</txt>
+            </li>
+        </article>
+        <li link="https://www.youtube.com/watch?v=34DqfPxX1rE&list=PLBqsiUKpgHCATaSMzmAQhXXTxSagVS1Yx">YouTube Guide</li>
+    </main>
+</body>
+
+</html>
