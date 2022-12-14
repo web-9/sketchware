@@ -1,12 +1,19 @@
 
 
+@import url('https://fonts.googleapis.com/css2?family=Archivo+Black&family=Cinzel+Decorative:wght@400;700;900&family=Open+Sans:wght@500;800&family=Tangerine:wght@400;700&display=swap');
+
 *, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
+
 body {
     min-height: 100vh;
     padding-top: 81px;
     background: #212329;
     color: #e9e6e3;
     font-size: 1.1rem;
+    /* font-family: 'Archivo Black', sans-serif; */
+    /* font-family: 'Cinzel Decorative', cursive; */
+    font-family: 'Open Sans', sans-serif;
+    /* font-family: 'Tangerine', cursive; */
 }
 ul, ol, menu {
     margin: 1em 0;
