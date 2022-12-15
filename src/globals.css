@@ -57,7 +57,7 @@ appbar {
     margin: 0 auto;
     background: #212329;
 }
-appbar > h1 { align-self: center; }
+appbar > menu :nth-child( 2 ) { align-self: center; }
 body > main > article, body > main { padding-top: 18px; }
 body > main > article { list-style-type: decimal; width: 90%; margin: 0 auto; }
 body > main > article :nth-child( 1n ) {
